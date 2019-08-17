@@ -4,30 +4,35 @@ import HomePage from "./landing/HomePage";
 import NotFoundPage from "./landing/404";
 import NotAuthedPage from "./landing/NotAuthedPage";
 import AboutPage from "./about/AboutPage";
+import CharacterPage from "./character/CharacterPage";
 
 export const ROUTES = [
     {
         path: "/",
         exact: true,
-        title: () => <h2>Home</h2>,
+        link: () => "Home",
         main: () => <HomePage/>
     },
     {
         path: "/about",
         exact: true,
-        title: () => <h2>About</h2>,
+        link: () => "About",
         main: () => <AboutPage/>
+    },
+    {
+        path: "/characters",
+        exact: true,
+        link: () => "Characters",
+        main: () => <CharacterPage/>
     },
     {
         path: "/noAuth",
         exact: true,
-        title: () => <h2>Not Authorized</h2>,
         main: () => <NotAuthedPage/>
     },
     {
         path: "",
         exact: false,
-        title: () => <h2>Page Not Found</h2>,
         main: () => <NotFoundPage/>
     }
 ];

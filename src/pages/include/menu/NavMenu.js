@@ -4,6 +4,7 @@ import {ROUTES} from "../../routes";
 import {NavLink} from "react-router-dom";
 
 import './NavMenu.css';
+import {isDefined} from "../../../common/helpers";
 
 class NavMenu extends React.Component {
     render() {
@@ -11,9 +12,11 @@ class NavMenu extends React.Component {
             <Menu>
                 {
                     //Generate routes from array
-                    ROUTES.map((route, index) => (
-                        <NavLink to={route.path}> {route.path} </NavLink>
-                    ))
+                    ROUTES
+                        .filter(route => isDefined(route.path) && isDefined(route.link))
+                        .map((route, index) => (
+                            <NavLink to={route.path}> {route.link()} </NavLink>
+                        ))
                 }
             </Menu>
         )
