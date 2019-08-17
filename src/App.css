@@ -1,0 +1,17 @@
+body {
+    overflow: auto;
+    z-index: 99;
+}
+
+#content {
+    min-height: 77vh;
+}
+
+.wrapper {
+    padding: 10px;
+}
+
+#home-page {
+    margin-left: 6%;
+    margin-right: 6%;
+}
