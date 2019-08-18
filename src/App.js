@@ -10,22 +10,20 @@ import NavMenu from "./pages/include/menu/NavMenu";
 //CSS
 import './App.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
+import Footer from "./pages/include/footer/Footer";
 
 function App() {
     return (
         <Router>
-            <div id="outer-container">
+            <div id="outer-container" className={"h-100"}>
                 <NavMenu/>
-                <main id={"page-wrap"}>
-                    <div id={"app-root"}>
-                        <Header/>
-                        <div className="wrapper">
-                            <div id="content">
-                                <Routes/>
-                            </div>
-                        </div>
+                <div id={"page-wrap"}>
+                    <Header/>
+                    <div id="page-content">
+                        <Routes/>
                     </div>
-                </main>
+                    <Footer/>
+                </div>
             </div>
         </Router>
     );

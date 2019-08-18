@@ -1,10 +1,12 @@
 import React from 'react';
 
+import './Header.css'
+
 class Header extends React.Component {
     render() {
         return (
-           <div>
-               <h1>Header</h1>
+           <div id={"header"}>
+               <h1>Table Top Game - Grug's First Cave Adventure</h1>
            </div>
         )
     }

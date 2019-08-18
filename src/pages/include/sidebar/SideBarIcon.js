@@ -4,17 +4,17 @@ import {IconData} from '../../../data/IconData.js';
 import {Button} from "react-bootstrap";
 
 
-class SideBar extends React.Component {
+class SideBarIcon extends React.Component {
     render() {
-        const {icon} = this.props;
+        const {icon, className} = this.props;
         return (
-            <Button id={icon.id} onClick={icon.handleClick}> {icon.iconRender()} </Button>
+            <Button id={icon.id} className={className} onClick={icon.handleClick}> {icon.iconRender()} </Button>
         )
     }
 }
 
-SideBar.propTypes = {
+SideBarIcon.propTypes = {
     icon: PropTypes.objectOf(IconData).isRequired
 }
 
-export default SideBar;
+export default SideBarIcon;

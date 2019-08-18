@@ -1,17 +1,22 @@
 import {isDefined} from "../common/helpers";
 
 export class IconData {
-    constructor(isShownFunc, name, iconRender) {
-        this.isShownFunc = isShownFunc;
+    constructor(name, iconRender) {
         this.iconRender = iconRender;
         this.name = name;
         this.id = name.toLowerCase().replace(/\s+/g, "_");
 
         this.shouldRenderIcon = this.shouldRenderIcon.bind(this);
         this.setClickCallBack = this.setClickCallBack.bind(this);
+        this.setShownAccessor = this.setShownAccessor.bind(this);
         this.handleClick = this.handleClick.bind(this);
         this.isDocked = this.isDocked.bind(this);
         this.show = this.show.bind(this);
+    }
+
+    setShownAccessor(func) {
+        this.isShownFunc = func;
+        return this;
     }
 
     //Sets the click callback
@@ -23,7 +28,7 @@ export class IconData {
     //Handles click
     handleClick(event) {
         if (isDefined(this.clickFunc)) {
-            this.clickFunc(this);
+            this.clickFunc(this, this.isDocked());
         }
     }
 
