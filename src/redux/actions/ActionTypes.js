@@ -1,1 +1,4 @@
 export const SET_AUTH_TOKEN = 'SET_AUTH_TOKEN';
+
+export const SET_CHARACTER = 'SET_CHARACTER';
+export const ADD_CHARACTER = 'ADD_CHARACTER';

@@ -1,7 +1,7 @@
 import {ClassData} from "./ClassData";
 import {AttributeData} from "./AttributeData";
 
-export class CharacterData {
+export class GameCharacterData {
 
     //Name of the character
     characterName : string;

@@ -1,7 +1,7 @@
 //Libs
 import React from 'react';
 import {connect} from "react-redux";
-import {IoIosArchive, IoIosArrowDropdown, IoIosAttach} from "react-icons/io";
+import {IoIosAlbums, IoIosCard} from "react-icons/io";
 
 //Components
 import SideBar from "../include/sidebar/SideBar";
@@ -9,12 +9,15 @@ import SideBarWidget from "../include/sidebar/SideBarWidget";
 
 //Imports
 import {IconData} from '../../data/IconData.js';
+import CharacterSelectionWidget from "./CharacterSelectionWidget";
 
+//Handles looking at and modifying characters outside the game screen
 class CharacterPage extends React.Component {
 
     constructor(props) {
         super(props);
 
+        //Init state
         this.state = {
             showCharacterWidget: false,
             showSummaryWidget: true,
@@ -24,7 +27,15 @@ class CharacterPage extends React.Component {
             showActionsWidget: false
         }
 
-        this.characterWidgetIcon = new IconData('Characters', () => <IoIosArchive size={30}/>)
+        //Icon for displaying the character selector system
+        this.characterSelectWidgetIcon = new IconData('Characters', () => <IoIosAlbums size={30}/>)
+            .setShownAccessor(() => this.state.showCharacterWidget)
+            .setClickCallBack((iconData, docked) => {
+                this.setState({showCharacterWidget: true});
+            });
+
+        //Icon for showing the character summary
+        this.characterWidgetIcon = new IconData('Summary', () => <IoIosCard size={30}/>)
             .setShownAccessor(() => this.state.showCharacterWidget)
             .setClickCallBack((iconData, docked) => {
                 this.setState({showCharacterWidget: true});
@@ -32,7 +43,9 @@ class CharacterPage extends React.Component {
     }
 
     render() {
-        const icons = [this.characterWidgetIcon];
+
+        //Icons for the sidebar
+        const icons = [this.characterSelectWidgetIcon, this.characterWidgetIcon];
 
         return (
             <div id={"character-page"}>
@@ -43,9 +56,7 @@ class CharacterPage extends React.Component {
                     {
                         this.characterWidgetIcon.show(() => (
                             <SideBarWidget onClick={() => this.setState({showCharacterWidget: false})}>
-                                {
-
-                                }
+                                <CharacterSelectionWidget/>
                             </SideBarWidget>
                         ), () => null)
                     }
@@ -56,13 +67,11 @@ class CharacterPage extends React.Component {
 }
 
 function mapStateToProps(state) {
-    return {
-    };
+    return {};
 }
 
 function mapDispatchToProps(dispatch) {
-    return {
-    };
+    return {};
 }
 
 export default connect(mapStateToProps, mapDispatchToProps)(CharacterPage);
