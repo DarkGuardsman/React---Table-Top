@@ -1,32 +1,32 @@
 import {ClassData} from "./ClassData";
 
 export class AttributeData {
-    strength : number;
-    endurance : number;
-    agility : number;
-    charisma : number;
-    fortitude : number;
-    reflexes : number;
-    health : number;
+    strength: number;
+    endurance: number;
+    agility: number;
+    charisma: number;
+    fortitude: number;
+    reflexes: number;
+    health: number;
 
-    intellect : number;
-    memory : number;
-    creativity : number;
-    perception : number;
+    intellect: number;
+    memory: number;
+    creativity: number;
+    perception: number;
     coordination: number;
     sociability: number;
-    resolve : number;
+    resolve: number;
 
     constructor() {
         this.load = this.load.bind(this);
         this.save = this.save.bind(this);
     }
 
-    load(json : Object) {
+    load(json: Object) {
 
     }
 
-    save() : Object {
+    save(): Object {
         let save = {};
 
 

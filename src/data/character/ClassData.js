@@ -1,10 +1,10 @@
 export class ClassData {
 
     //name of the class
-    className : string;
+    className: string;
 
     //Purely used for Ajax calls
-    classID : number;
+    classID: number;
 
     constructor() {
         this.load = this.load.bind(this);
@@ -12,14 +12,14 @@ export class ClassData {
     }
 
     load(json) {
-       this.className = json.className;
-       this.classID = json.classID;
+        this.className = json.className;
+        this.classID = json.classID;
     }
 
-    save() : Object {
+    save(): Object {
         return {
-            className : this.className,
-            classId : this.classID
+            className: this.className,
+            classId: this.classID
         }
     }
 }

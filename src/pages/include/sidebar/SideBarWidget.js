@@ -18,7 +18,7 @@ class SideBarWidget extends React.Component {
 }
 
 SideBarIcon.propTypes = {
-    onClick : PropTypes.func.isRequired
+    onClick: PropTypes.func.isRequired
 }
 
 export default SideBarWidget;

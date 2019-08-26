@@ -4,31 +4,31 @@ import {AttributeData} from "./AttributeData";
 export class GameCharacterData {
 
     //Name of the character
-    characterName : string;
+    characterName: string;
 
     //Unique id of the character
-    characterID : number;
+    characterID: number;
 
     //Is local only
-    local : boolean = true;
-y
+    local: boolean = true;
+    y
     //Class of the character
-    classData : ClassData;
+    classData: ClassData;
 
     //Attributes of the character
-    attributes : AttributeData;
+    attributes: AttributeData;
 
     constructor() {
         this.load = this.load.bind(this);
         this.save = this.save.bind(this);
     }
 
-    load(json : Object) {
+    load(json: Object) {
         this.characterName = json.characterName;
         this.classData = new ClassData().load(json.class);
     }
 
-    save() : Object {
+    save(): Object {
         let save = {};
         save.characterName = this.characterName;
         save.classData = this.classData.save();
