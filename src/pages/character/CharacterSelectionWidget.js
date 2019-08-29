@@ -47,7 +47,7 @@ class CharacterSelectionWidget extends React.Component {
 
 function mapStateToProps(state) {
     return {
-        characters: state.characters
+        characters: state.character.characters
     };
 }
 
