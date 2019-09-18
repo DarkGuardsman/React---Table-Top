@@ -2,7 +2,6 @@ import React, {Fragment} from 'react';
 import PropTypes from 'prop-types';
 import {IconData} from '../../../data/IconData.js';
 import SideBarIcon from "./SideBarIcon.js";
-
 //Css
 import './SideBar.css';
 

@@ -2,11 +2,9 @@
 import React from 'react';
 import {connect} from "react-redux";
 import {IoIosAlbums, IoIosCard} from "react-icons/io";
-
 //Components
 import SideBar from "../include/sidebar/SideBar";
 import SideBarWidget from "../include/sidebar/SideBarWidget";
-
 //Imports
 import {IconData} from '../../data/IconData.js';
 import CharacterSelectionWidget from "./CharacterSelectionWidget";

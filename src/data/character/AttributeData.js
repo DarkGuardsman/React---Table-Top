@@ -1,5 +1,3 @@
-import {ClassData} from "./ClassData";
-
 export class AttributeData {
     strength: number;
     endurance: number;

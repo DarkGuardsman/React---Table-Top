@@ -1,12 +1,9 @@
 //Libs
 import React from 'react';
-import {BrowserRouter as Router} from "react-router-dom";
-
 //Component parts
 import Header from "./pages/include/header/Header";
 import Routes from "./pages/routes";
 import NavMenu from "./pages/include/menu/NavMenu";
-
 //CSS
 import './App.css';
 import 'bootstrap/dist/css/bootstrap.min.css';

@@ -1,5 +1,5 @@
 import {ADD_CHARACTER, SET_CHARACTER} from "../actions/ActionTypes";
-import {isArray, isDefined} from "../../common/helpers";
+import {isArray} from "../../common/helpers";
 
 const initialState = {
     characterName: null,     //Display name of the character sheet

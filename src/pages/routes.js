@@ -1,5 +1,5 @@
 import React from "react";
-import {BrowserRouter as Router, Route, Switch} from "react-router-dom";
+import {Route, Switch} from "react-router-dom";
 import HomePage from "./landing/HomePage";
 import NotFoundPage from "./landing/404";
 import NotAuthedPage from "./landing/NotAuthedPage";
